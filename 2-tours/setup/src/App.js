@@ -10,13 +10,14 @@ function App() {
   const fetchTours = async () => {
     setLoading(true)
     try {
+      // const tours = await (await fetch(url)).json()
       const response = await fetch(url)
       const tours = await response.json()
-      setLoading(false)
       setTours(tours)
+      setLoading(false)
     } catch (error) {
       setLoading(false)
-      console.err(error)
+      console.log(error)
     }
   }
 
@@ -34,7 +35,7 @@ function App() {
 
   return (
     <main>
-      <Tours />
+      <Tours tours={tours} />
     </main>
   )
 }
