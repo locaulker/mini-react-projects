@@ -81,6 +81,7 @@ h4 {
   text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
+  font-weight: 300;
 }
 h1 {
   font-size: 3rem;
@@ -119,6 +120,7 @@ p {
   h3,
   h4 {
     line-height: 1;
+    font-weight: 300;
   }
 }
 /*  global classes */
