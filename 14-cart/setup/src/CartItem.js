@@ -1,6 +1,6 @@
 import React from 'react'
 import { useGlobalContext } from './context'
-const CartItem = ({ id, img, title, price, amount }) => {
+const CartItem = ({ id, img, title, price, qty }) => {
   return (
     <article className='cart-item'>
       <img src={img} alt={title} />
@@ -23,7 +23,7 @@ const CartItem = ({ id, img, title, price, amount }) => {
           </svg>
         </button>
         {/* amount */}
-        <p className='amount'>{amount}</p>
+        <p className='amount'>{qty}</p>
         {/* decrease amount */}
         <button className='amount-btn' onClick={() => console.log('decrease')}>
           <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
