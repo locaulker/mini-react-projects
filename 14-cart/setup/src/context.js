@@ -8,7 +8,7 @@ const initialState = {
   loading: false,
   cart: cartItems,
   total: 0,
-  qty: 0
+  amount: 0,
 }
 
 const AppProvider = ({ children }) => {
@@ -30,15 +30,15 @@ const AppProvider = ({ children }) => {
     dispatch({ type: 'DECREASE', payload: id })
   }
 
-  // const fetchData = async () => {
-  //   dispatch({ type: 'LOADING' })
-  //   const response = await fetch(url)
-  //   const cart = await response.json()
-  //   dispatch({ type: 'DISPLAY_ITEMS', payload: cart })
-  // }
+  const fetchData = async () => {
+    dispatch({ type: 'LOADING' })
+    const response = await fetch(url)
+    const cart = await response.json()
+    dispatch({ type: 'DISPLAY_ITEMS', payload: cart })
+  }
 
   useEffect(() => {
-    // fetchData()
+    fetchData()
   }, [])
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const AppProvider = ({ children }) => {
         clearCart,
         remove,
         increase,
-        decrease
+        decrease,
       }}
     >
       {children}
